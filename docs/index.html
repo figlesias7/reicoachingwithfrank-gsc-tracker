@@ -48,7 +48,7 @@
     <input type="date" id="endDate">
   </div>
 
-  <button onclick="applyCustomRange()">Custom</button>
+  <button onclick="applyCustomRange()">Go</button>
 
   <div>
     <div>Page View</div>
@@ -105,6 +105,7 @@ async function loadData() {
   queries = await fetch('./data/queries.json').then(r => r.json());
 
   populatePages();
+  setDefaultDates();
   setRange(30);
 }
 
@@ -118,15 +119,42 @@ function populatePages() {
   });
 }
 
+function setDefaultDates() {
+  if (!daily.length) return;
+
+  const dates = daily.map(r => r.date).sort();
+  const minDate = dates[0];
+  const maxDate = dates[dates.length - 1];
+
+  document.getElementById('startDate').value = minDate;
+  document.getElementById('endDate').value = maxDate;
+}
+
 function setRange(days) {
   currentRange = days;
-  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-  event?.target?.classList.add('active');
+
+  document.querySelectorAll('.filters button').forEach(b => {
+    b.classList.remove('active');
+  });
+
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
   renderDashboard();
 }
 
 function applyCustomRange() {
   currentRange = 'custom';
+
+  document.querySelectorAll('.filters button').forEach(b => {
+    b.classList.remove('active');
+  });
+
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
   renderDashboard();
 }
 
@@ -141,9 +169,15 @@ function filterByDate(rows) {
 
   if (currentRange === 'all') {
     start = dates[0];
+
   } else if (currentRange === 'custom') {
     start = document.getElementById('startDate').value;
     end = document.getElementById('endDate').value;
+
+  } else if (currentRange === 1) {
+    start = maxDate;
+    end = maxDate;
+
   } else {
     const d = new Date(maxDate);
     d.setDate(d.getDate() - currentRange + 1);
@@ -161,24 +195,36 @@ function summarize(rows) {
   const weightedPosition = rows.reduce((s,r) => s + (r.position * r.impressions), 0);
   const position = impressions ? weightedPosition / impressions : 0;
   const ctr = impressions ? clicks / impressions : 0;
+
   return { clicks, impressions, position, ctr };
 }
 
 function groupByDate(rows) {
   const map = {};
+
   rows.forEach(r => {
-    if (!map[r.date]) map[r.date] = { date:r.date, clicks:0, impressions:0, positionWeight:0 };
+    if (!map[r.date]) {
+      map[r.date] = {
+        date: r.date,
+        clicks: 0,
+        impressions: 0,
+        positionWeight: 0
+      };
+    }
+
     map[r.date].clicks += r.clicks;
     map[r.date].impressions += r.impressions;
     map[r.date].positionWeight += r.position * r.impressions;
   });
 
-  return Object.values(map).sort((a,b) => a.date.localeCompare(b.date)).map(r => ({
-    date: r.date,
-    clicks: r.clicks,
-    impressions: r.impressions,
-    position: r.impressions ? r.positionWeight / r.impressions : 0
-  }));
+  return Object.values(map)
+    .sort((a,b) => a.date.localeCompare(b.date))
+    .map(r => ({
+      date: r.date,
+      clicks: r.clicks,
+      impressions: r.impressions,
+      position: r.impressions ? r.positionWeight / r.impressions : 0
+    }));
 }
 
 function renderDashboard() {
@@ -229,30 +275,37 @@ function renderChart(rows) {
 function renderTables(selectedPage) {
   const pagesBody = document.querySelector('#pagesTable tbody');
   const queriesBody = document.querySelector('#queriesTable tbody');
+
   pagesBody.innerHTML = '';
   queriesBody.innerHTML = '';
 
-  pages.sort((a,b) => b.impressions - a.impressions).slice(0,25).forEach(p => {
-    pagesBody.innerHTML += `
-      <tr>
-        <td><a href="${p.page}" target="_blank">${p.page}</a></td>
-        <td>${p.clicks}</td>
-        <td>${p.impressions}</td>
-        <td>${(p.ctr * 100).toFixed(2)}%</td>
-        <td>${Number(p.position).toFixed(1)}</td>
-      </tr>`;
-  });
+  pages
+    .sort((a,b) => b.impressions - a.impressions)
+    .slice(0,25)
+    .forEach(p => {
+      pagesBody.innerHTML += `
+        <tr>
+          <td><a href="${p.page}" target="_blank">${p.page}</a></td>
+          <td>${p.clicks}</td>
+          <td>${p.impressions}</td>
+          <td>${(p.ctr * 100).toFixed(2)}%</td>
+          <td>${Number(p.position).toFixed(1)}</td>
+        </tr>`;
+    });
 
-  queries.sort((a,b) => b.impressions - a.impressions).slice(0,25).forEach(q => {
-    queriesBody.innerHTML += `
-      <tr>
-        <td>${q.query}</td>
-        <td>${q.clicks}</td>
-        <td>${q.impressions}</td>
-        <td>${(q.ctr * 100).toFixed(2)}%</td>
-        <td>${Number(q.position).toFixed(1)}</td>
-      </tr>`;
-  });
+  queries
+    .sort((a,b) => b.impressions - a.impressions)
+    .slice(0,25)
+    .forEach(q => {
+      queriesBody.innerHTML += `
+        <tr>
+          <td>${q.query}</td>
+          <td>${q.clicks}</td>
+          <td>${q.impressions}</td>
+          <td>${(q.ctr * 100).toFixed(2)}%</td>
+          <td>${Number(q.position).toFixed(1)}</td>
+        </tr>`;
+    });
 }
 
 loadData();
