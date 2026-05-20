@@ -3,30 +3,28 @@ import json
 from datetime import date, timedelta
 from pathlib import Path
 
-from google.oauth2 import service_account
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
-SITE_URL = os.environ["GSC_SITE_URL"]
-CLIENT_EMAIL = os.environ["GSC_CLIENT_EMAIL"]
-PRIVATE_KEY = os.environ["GSC_PRIVATE_KEY"].replace("\\n", "\n")
+SITE_URL = "sc-domain:reicoachingwithfrank.com"
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
-
-credentials = service_account.Credentials.from_service_account_info(
-    {
-        "type": "service_account",
-        "client_email": CLIENT_EMAIL,
-        "private_key": PRIVATE_KEY,
-        "token_uri": "https://oauth2.googleapis.com/token",
-    },
-    scopes=SCOPES,
+creds = Credentials(
+    None,
+    refresh_token=os.environ["GOOGLE_REFRESH_TOKEN"],
+    token_uri="https://oauth2.googleapis.com/token",
+    client_id=os.environ["GOOGLE_CLIENT_ID"],
+    client_secret=os.environ["GOOGLE_CLIENT_SECRET"],
+    scopes=["https://www.googleapis.com/auth/webmasters.readonly"],
 )
 
-service = build("searchconsole", "v1", credentials=credentials)
+creds.refresh(Request())
+
+service = build("searchconsole", "v1", credentials=creds)
 
 end_date = date.today() - timedelta(days=2)
 start_date = date(2026, 4, 3)
@@ -36,7 +34,6 @@ def query_gsc(dimensions=None, row_limit=25000):
         "startDate": start_date.isoformat(),
         "endDate": end_date.isoformat(),
         "rowLimit": row_limit,
-        "startRow": 0,
     }
 
     if dimensions:
@@ -56,9 +53,6 @@ def save_json(filename, data):
 summary_rows = query_gsc()
 
 summary = {
-    "site": SITE_URL,
-    "start_date": start_date.isoformat(),
-    "end_date": end_date.isoformat(),
     "clicks": 0,
     "impressions": 0,
     "ctr": 0,
