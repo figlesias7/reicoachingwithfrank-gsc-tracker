@@ -26,7 +26,7 @@ jobs:
         env:
           GSC_CLIENT_EMAIL: ${{ secrets.GSC_CLIENT_EMAIL }}
           GSC_PRIVATE_KEY: ${{ secrets.GSC_PRIVATE_KEY }}
-          GSC_SITE_URL: "sc-domain:reicoachingwithfrank.com"
+          GSC_SITE_URL: "https://www.reicoachingwithfrank.com/"
         run: python scripts/fetch_gsc.py
 
       - name: Commit updated data
