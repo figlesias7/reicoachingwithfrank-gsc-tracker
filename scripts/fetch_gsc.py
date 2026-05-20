@@ -1,5 +1,7 @@
 import os
 import json
+import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -8,6 +10,7 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
 SITE_URL = "sc-domain:reicoachingwithfrank.com"
+SITEMAP_URL = "https://www.reicoachingwithfrank.com/sitemap.xml"
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "docs" / "data"
@@ -23,7 +26,6 @@ creds = Credentials(
 )
 
 creds.refresh(Request())
-
 service = build("searchconsole", "v1", credentials=creds)
 
 end_date = date.today() - timedelta(days=2)
@@ -41,17 +43,52 @@ def query_gsc(dimensions=None, row_limit=25000):
     if dimensions:
         request["dimensions"] = dimensions
 
-    response = service.searchanalytics().query(
-        siteUrl=SITE_URL,
-        body=request
-    ).execute()
-
+    response = service.searchanalytics().query(siteUrl=SITE_URL, body=request).execute()
     return response.get("rows", [])
 
 
 def save_json(filename, data):
     with open(DATA_DIR / filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+
+
+def fetch_sitemap_urls():
+    urls = []
+
+    try:
+        with urllib.request.urlopen(SITEMAP_URL, timeout=20) as response:
+            xml_data = response.read()
+
+        root = ET.fromstring(xml_data)
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+        sitemap_locs = [loc.text for loc in root.findall(".//sm:sitemap/sm:loc", ns)]
+
+        if sitemap_locs:
+            for sitemap in sitemap_locs:
+                try:
+                    with urllib.request.urlopen(sitemap, timeout=20) as response:
+                        child_xml = response.read()
+
+                    child_root = ET.fromstring(child_xml)
+                    urls.extend([
+                        loc.text.strip()
+                        for loc in child_root.findall(".//sm:url/sm:loc", ns)
+                        if loc.text
+                    ])
+                except Exception:
+                    continue
+        else:
+            urls.extend([
+                loc.text.strip()
+                for loc in root.findall(".//sm:url/sm:loc", ns)
+                if loc.text
+            ])
+
+    except Exception:
+        urls = []
+
+    return sorted(set(urls))
 
 
 summary_rows = query_gsc()
@@ -119,10 +156,27 @@ for row in query_gsc(["page", "date"], row_limit=25000):
     })
 
 
+sitemap_urls = fetch_sitemap_urls()
+pages_with_impressions = {p["page"].rstrip("/") for p in pages if p["impressions"] > 0}
+
+zero_pages = [
+    {
+        "page": url,
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": 0
+    }
+    for url in sitemap_urls
+    if url.rstrip("/") not in pages_with_impressions
+]
+
+
 save_json("summary.json", summary)
 save_json("pages.json", pages)
 save_json("queries.json", queries)
 save_json("daily.json", daily)
 save_json("page_daily.json", page_daily)
+save_json("zero_pages.json", zero_pages)
 
 print("GSC export complete")
