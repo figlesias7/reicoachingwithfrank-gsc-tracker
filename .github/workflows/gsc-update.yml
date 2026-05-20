@@ -1,12 +1,38 @@
-name: GSC Update
+name: Update GSC Data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 10,22 * * *"
+
+permissions:
+  contents: write
 
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test
-        run: echo "Tracker workflow ready"
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install google-api-python-client google-auth pandas
+
+      - name: Run GSC export
+        env:
+          GSC_CLIENT_EMAIL: ${{ secrets.GSC_CLIENT_EMAIL }}
+          GSC_PRIVATE_KEY: ${{ secrets.GSC_PRIVATE_KEY }}
+          GSC_SITE_URL: "sc-domain:reicoachingwithfrank.com"
+        run: python scripts/fetch_gsc.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/data/
+          git commit -m "Update GSC data" || echo "No changes to commit"
+          git push
