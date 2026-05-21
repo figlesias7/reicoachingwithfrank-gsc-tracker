@@ -1,7 +1,161 @@
-<!-- ONLY THIS SECTION CHANGED -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REI Coaching GSC Dashboard</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:#111827;
+      color:#f3f4f6;
+      margin:0;
+      padding:20px;
+    }
+
+    h1 { margin-bottom:10px; }
+
+    .subtitle {
+      color:#9ca3af;
+      margin-bottom:25px;
+    }
+
+    .filters {
+      background:#1f2937;
+      padding:15px;
+      border-radius:12px;
+      margin-bottom:25px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:end;
+    }
+
+    button, select, input {
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #374151;
+      background:#111827;
+      color:#f3f4f6;
+    }
+
+    button { cursor:pointer; }
+
+    button.active {
+      background:#2563eb;
+      border-color:#2563eb;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:30px;
+    }
+
+    .card {
+      background:#1f2937;
+      padding:20px;
+      border-radius:12px;
+    }
+
+    .card h2 {
+      margin:0;
+      font-size:14px;
+      color:#9ca3af;
+    }
+
+    .value {
+      margin-top:10px;
+      font-size:32px;
+      font-weight:bold;
+    }
+
+    .section {
+      background:#1f2937;
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:30px;
+    }
+
+    table {
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th, td {
+      text-align:left;
+      padding:10px;
+      border-bottom:1px solid #374151;
+      vertical-align:top;
+    }
+
+    th {
+      color:#9ca3af;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    th:hover { color:white; }
+
+    tr:hover { background:#374151; }
+
+    canvas {
+      background:white;
+      border-radius:10px;
+      padding:10px;
+      margin-bottom:20px;
+    }
+
+    a {
+      color:#60a5fa;
+      text-decoration:none;
+    }
+
+    .zero-pages {
+      max-height:500px;
+      overflow:auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>REI Coaching GSC Dashboard</h1>
+
+<div class="subtitle" id="dateRangeLabel">Loading data...</div>
+
+<div class="filters">
+  <button onclick="setRange(1)">Day</button>
+  <button onclick="setRange(7)">7 Days</button>
+  <button class="active" onclick="setRange(30)">30 Days</button>
+  <button onclick="setRange('all')">All Time</button>
+
+  <div>
+    <div>Start</div>
+    <input type="date" id="startDate">
+  </div>
+
+  <div>
+    <div>End</div>
+    <input type="date" id="endDate">
+  </div>
+
+  <button onclick="applyCustomRange()">Go</button>
+
+  <div>
+    <div>Page View</div>
+    <select id="pageSelect" onchange="renderDashboard()">
+      <option value="__all__">Entire Site</option>
+    </select>
+  </div>
+</div>
 
 <div class="cards">
-
   <div class="card">
     <h2>Clicks</h2>
     <div class="value" id="clicks">-</div>
@@ -26,5 +180,371 @@
     <h2>Total Pages</h2>
     <div class="value" id="totalPages">-</div>
   </div>
-
 </div>
+
+<div class="section">
+  <h2>Clicks, Impressions & Position</h2>
+  <canvas id="mainChart"></canvas>
+</div>
+
+<div class="section">
+  <h2>Top Pages</h2>
+
+  <table id="pagesTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable('pages','page')">Page</th>
+        <th onclick="sortTable('pages','clicks')">Clicks</th>
+        <th onclick="sortTable('pages','impressions')">Impressions</th>
+        <th onclick="sortTable('pages','ctr')">CTR</th>
+        <th onclick="sortTable('pages','position')">Position</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Top Queries</h2>
+
+  <table id="queriesTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable('queries','query')">Query</th>
+        <th onclick="sortTable('queries','clicks')">Clicks</th>
+        <th onclick="sortTable('queries','impressions')">Impressions</th>
+        <th onclick="sortTable('queries','ctr')">CTR</th>
+        <th onclick="sortTable('queries','position')">Position</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="section zero-pages">
+  <h2>Zero Impression Pages</h2>
+
+  <table id="zeroTable">
+    <thead>
+      <tr>
+        <th>Page</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+let daily = [];
+let pageDaily = [];
+let pages = [];
+let queries = [];
+let zeroPages = [];
+
+let chart = null;
+let currentRange = 30;
+
+let sortState = {
+  pages: { column:'impressions', direction:'desc' },
+  queries: { column:'impressions', direction:'desc' }
+};
+
+async function loadData() {
+  daily = await fetch('./data/daily.json').then(r => r.json());
+  pageDaily = await fetch('./data/page_daily.json').then(r => r.json());
+  pages = await fetch('./data/pages.json').then(r => r.json());
+  queries = await fetch('./data/queries.json').then(r => r.json());
+  zeroPages = await fetch('./data/zero_pages.json').then(r => r.json());
+
+  populatePages();
+  populateZeroPages();
+  setDefaultDates();
+  setRange(30);
+}
+
+function populatePages() {
+  const select = document.getElementById('pageSelect');
+
+  pages
+    .sort((a,b) => b.impressions - a.impressions)
+    .forEach(p => {
+      const opt = document.createElement('option');
+      opt.value = p.page;
+      opt.textContent = p.page.replace('https://www.reicoachingwithfrank.com','');
+      select.appendChild(opt);
+    });
+}
+
+function populateZeroPages() {
+  const body = document.querySelector('#zeroTable tbody');
+  body.innerHTML = '';
+
+  zeroPages.forEach(p => {
+    body.innerHTML += `
+      <tr>
+        <td><a href="${p.page}" target="_blank">${p.page}</a></td>
+      </tr>
+    `;
+  });
+}
+
+function setDefaultDates() {
+  if (!daily.length) return;
+
+  const dates = daily.map(r => r.date).sort();
+
+  document.getElementById('startDate').value = dates[0];
+  document.getElementById('endDate').value = dates[dates.length - 1];
+}
+
+function setRange(days) {
+  currentRange = days;
+
+  document.querySelectorAll('.filters button')
+    .forEach(b => b.classList.remove('active'));
+
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
+  renderDashboard();
+}
+
+function applyCustomRange() {
+  currentRange = 'custom';
+  renderDashboard();
+}
+
+function filterByDate(rows) {
+  if (!rows.length) return [];
+
+  const dates = rows.map(r => r.date).sort();
+  const maxDate = dates[dates.length - 1];
+
+  let start;
+  let end = maxDate;
+
+  if (currentRange === 'all') {
+    start = dates[0];
+
+  } else if (currentRange === 'custom') {
+    start = document.getElementById('startDate').value;
+    end = document.getElementById('endDate').value;
+
+  } else if (currentRange === 1) {
+    start = maxDate;
+    end = maxDate;
+
+  } else {
+    const d = new Date(maxDate);
+    d.setDate(d.getDate() - currentRange + 1);
+    start = d.toISOString().slice(0,10);
+  }
+
+  document.getElementById('dateRangeLabel').innerText =
+    `Showing ${start} through ${end}`;
+
+  return rows.filter(r => r.date >= start && r.date <= end);
+}
+
+function summarize(rows) {
+  const clicks = rows.reduce((s,r) => s + r.clicks,0);
+  const impressions = rows.reduce((s,r) => s + r.impressions,0);
+  const weightedPosition = rows.reduce((s,r) => s + (r.position * r.impressions),0);
+  const position = impressions ? weightedPosition / impressions : 0;
+  const ctr = impressions ? clicks / impressions : 0;
+
+  return { clicks, impressions, position, ctr };
+}
+
+function groupByDate(rows) {
+  const map = {};
+
+  rows.forEach(r => {
+    if (!map[r.date]) {
+      map[r.date] = {
+        date:r.date,
+        clicks:0,
+        impressions:0,
+        positionWeight:0
+      };
+    }
+
+    map[r.date].clicks += r.clicks;
+    map[r.date].impressions += r.impressions;
+    map[r.date].positionWeight += r.position * r.impressions;
+  });
+
+  return Object.values(map)
+    .sort((a,b) => a.date.localeCompare(b.date))
+    .map(r => ({
+      date:r.date,
+      clicks:r.clicks,
+      impressions:r.impressions,
+      position:r.impressions ? r.positionWeight / r.impressions : 0
+    }));
+}
+
+function renderDashboard() {
+  const selectedPage = document.getElementById('pageSelect').value;
+
+  let rows = selectedPage === '__all__'
+    ? filterByDate(daily)
+    : filterByDate(pageDaily.filter(r => r.page === selectedPage));
+
+  const chartRows = selectedPage === '__all__'
+    ? rows
+    : groupByDate(rows);
+
+  const totals = summarize(rows);
+
+  document.getElementById('clicks').innerText = totals.clicks;
+  document.getElementById('impressions').innerText = totals.impressions;
+  document.getElementById('position').innerText = totals.position.toFixed(1);
+  document.getElementById('ctr').innerText = (totals.ctr * 100).toFixed(2) + '%';
+  document.getElementById('totalPages').innerText = pages.length + zeroPages.length;
+
+  renderChart(chartRows);
+  renderTables();
+}
+
+function renderChart(rows) {
+  const ctx = document.getElementById('mainChart');
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(ctx, {
+    type:'line',
+
+    data:{
+      labels:rows.map(r => r.date),
+
+      datasets:[
+        {
+          label:'Impressions',
+          data:rows.map(r => r.impressions),
+          yAxisID:'y'
+        },
+        {
+          label:'Clicks',
+          data:rows.map(r => r.clicks),
+          yAxisID:'y'
+        },
+        {
+          label:'Position',
+          data:rows.map(r => r.position),
+          yAxisID:'y1'
+        }
+      ]
+    },
+
+    options:{
+      responsive:true,
+
+      interaction:{
+        mode:'index',
+        intersect:false
+      },
+
+      scales:{
+        y:{
+          beginAtZero:true,
+          position:'left'
+        },
+
+        y1:{
+          beginAtZero:false,
+          reverse:true,
+          position:'right',
+          grid:{
+            drawOnChartArea:false
+          }
+        }
+      }
+    }
+  });
+}
+
+function sortTable(type,column) {
+  const current = sortState[type];
+
+  if (current.column === column) {
+    current.direction = current.direction === 'asc' ? 'desc' : 'asc';
+  } else {
+    current.column = column;
+    current.direction = 'desc';
+  }
+
+  renderTables();
+}
+
+function renderTables() {
+  const pagesBody = document.querySelector('#pagesTable tbody');
+  const queriesBody = document.querySelector('#queriesTable tbody');
+
+  pagesBody.innerHTML = '';
+  queriesBody.innerHTML = '';
+
+  const pageSort = sortState.pages;
+  const querySort = sortState.queries;
+
+  const sortedPages = [...pages].sort((a,b) => {
+    let valA = a[pageSort.column];
+    let valB = b[pageSort.column];
+
+    if (typeof valA === 'string') {
+      return pageSort.direction === 'asc'
+        ? valA.localeCompare(valB)
+        : valB.localeCompare(valA);
+    }
+
+    return pageSort.direction === 'asc'
+      ? valA - valB
+      : valB - valA;
+  });
+
+  const sortedQueries = [...queries].sort((a,b) => {
+    let valA = a[querySort.column];
+    let valB = b[querySort.column];
+
+    if (typeof valA === 'string') {
+      return querySort.direction === 'asc'
+        ? valA.localeCompare(valB)
+        : valB.localeCompare(valA);
+    }
+
+    return querySort.direction === 'asc'
+      ? valA - valB
+      : valB - valA;
+  });
+
+  sortedPages.slice(0,25).forEach(p => {
+    pagesBody.innerHTML += `
+      <tr>
+        <td><a href="${p.page}" target="_blank">${p.page}</a></td>
+        <td>${p.clicks}</td>
+        <td>${p.impressions}</td>
+        <td>${(p.ctr * 100).toFixed(2)}%</td>
+        <td>${Number(p.position).toFixed(1)}</td>
+      </tr>
+    `;
+  });
+
+  sortedQueries.slice(0,25).forEach(q => {
+    queriesBody.innerHTML += `
+      <tr>
+        <td>${q.query}</td>
+        <td>${q.clicks}</td>
+        <td>${q.impressions}</td>
+        <td>${(q.ctr * 100).toFixed(2)}%</td>
+        <td>${Number(q.position).toFixed(1)}</td>
+      </tr>
+    `;
+  });
+}
+
+loadData();
+</script>
+
+</body>
+</html>
