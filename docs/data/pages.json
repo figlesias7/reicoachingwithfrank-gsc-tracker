@@ -2,9 +2,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
     "clicks": 5,
-    "impressions": 358,
-    "ctr": 0.013966480446927373,
-    "position": 18.337988826815643
+    "impressions": 368,
+    "ctr": 0.01358695652173913,
+    "position": 18.144021739130434
   },
   {
     "page": "https://www.reicoachingwithfrank.com/",
@@ -51,9 +51,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/fix-and-flip-mentor",
     "clicks": 0,
-    "impressions": 39,
+    "impressions": 40,
     "ctr": 0,
-    "position": 11.153846153846153
+    "position": 11.375
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/flips-and-builds",
@@ -91,11 +91,25 @@
     "position": 11.262295081967213
   },
   {
-    "page": "https://www.reicoachingwithfrank.com/s/pages/why-most-wholesalers-fail-without-a-mentor",
+    "page": "https://www.reicoachingwithfrank.com/s/pages/resources",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 5
+    "position": 10
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/store",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 38
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/why-most-wholesalers-fail-without-a-mentor",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 23.5
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/store",
