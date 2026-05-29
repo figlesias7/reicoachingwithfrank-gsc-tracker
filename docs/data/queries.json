@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 67,
-    "ctr": 0.05970149253731343,
-    "position": 16.07462686567164
+    "impressions": 68,
+    "ctr": 0.058823529411764705,
+    "position": 15.985294117647058
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -33,6 +33,13 @@
     "impressions": 2,
     "ctr": 0,
     "position": 4
+  },
+  {
+    "query": "deal financing",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 80
   },
   {
     "query": "fix and flip coaching",
@@ -70,11 +77,18 @@
     "position": 64
   },
   {
+    "query": "importance of self-education in wholesaling",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 21
+  },
+  {
     "query": "learning from other wholesalers mistakes",
     "clicks": 0,
-    "impressions": 2,
+    "impressions": 4,
     "ctr": 0,
-    "position": 44.5
+    "position": 42.75
   },
   {
     "query": "mentor for wholesaling real estate",
@@ -86,9 +100,16 @@
   {
     "query": "nurturing investor mindset for wholesaling",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 31
+    "position": 34.5
+  },
+  {
+    "query": "real estate investing courses for beginners",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 86.5
   },
   {
     "query": "real estate investor mentor cost",
@@ -128,9 +149,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 61,
+    "impressions": 63,
     "ctr": 0,
-    "position": 18.524590163934427
+    "position": 18.38095238095238
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -191,9 +212,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 105,
+    "impressions": 107,
     "ctr": 0,
-    "position": 17.495238095238093
+    "position": 17.485981308411215
   },
   {
     "query": "wholesale real estate mentorship",
@@ -226,8 +247,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 40,
+    "impressions": 41,
     "ctr": 0,
-    "position": 10.1
+    "position": 10.048780487804878
   }
 ]
