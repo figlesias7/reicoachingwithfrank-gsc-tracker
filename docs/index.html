@@ -81,45 +81,6 @@
       margin-bottom:30px;
     }
 
-    .section-header {
-      display:flex;
-      justify-content:space-between;
-      gap:15px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-bottom:15px;
-    }
-
-    .section-header h2 {
-      margin:0;
-    }
-
-    .note {
-      color:#9ca3af;
-      font-size:13px;
-      line-height:1.4;
-      max-width:650px;
-    }
-
-    .tracker-controls {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:12px;
-      margin-bottom:20px;
-    }
-
-    .tracker-control label {
-      display:block;
-      color:#9ca3af;
-      font-size:13px;
-      margin-bottom:6px;
-    }
-
-    .tracker-control select {
-      width:100%;
-    }
-
-
     table {
       width:100%;
       border-collapse:collapse;
@@ -159,11 +120,6 @@
       max-height:500px;
       overflow:auto;
     }
-
-    .muted {
-      color:#9ca3af;
-      font-size:13px;
-    }
   </style>
 </head>
 
@@ -174,10 +130,10 @@
 <div class="subtitle" id="dateRangeLabel">Loading data...</div>
 
 <div class="filters">
-  <button onclick="setRange(1, this)">Day</button>
-  <button onclick="setRange(7, this)">7 Days</button>
-  <button class="active" onclick="setRange(30, this)">30 Days</button>
-  <button onclick="setRange('all', this)">All Time</button>
+  <button onclick="setRange(1)">Day</button>
+  <button onclick="setRange(7)">7 Days</button>
+  <button class="active" onclick="setRange(30)">30 Days</button>
+  <button onclick="setRange('all')">All Time</button>
 
   <div>
     <div>Start</div>
@@ -277,50 +233,6 @@
     <tbody></tbody>
   </table>
 </div>
-<div class="section">
-  <div class="section-header">
-    <div>
-      <h2>Position Movement Tracker</h2>
-      <div class="note">
-        Use this when you want a position snapshot or a comparison against earlier dates. It counts every page row available in page_daily.json for each selected date and groups pages by average position: 1-10, 10.1-20, 20.1-30, and 30+.
-      </div>
-    </div>
-  </div>
-
-  <div class="tracker-controls">
-    <div class="tracker-control">
-      <label for="positionDate1">Main Date</label>
-      <select id="positionDate1" onchange="renderPositionTracker()"></select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate2">Compare Date 1</label>
-      <select id="positionDate2" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate3">Compare Date 2</label>
-      <select id="positionDate3" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate4">Compare Date 3</label>
-      <select id="positionDate4" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-  </div>
-
-  <table id="positionTable">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-</div>
-
 
 <script>
 let daily = [];
@@ -331,8 +243,6 @@ let zeroPages = [];
 
 let chart = null;
 let currentRange = 30;
-
-const positionGroups = ['1-10', '10.1-20', '20.1-30', '30+'];
 
 let sortState = {
   pages: { column:'impressions', direction:'desc' },
@@ -348,10 +258,8 @@ async function loadData() {
 
   populatePages();
   populateZeroPages();
-  populatePositionDateSelectors();
   setDefaultDates();
   setRange(30);
-  renderPositionTracker();
 }
 
 function populatePages() {
@@ -380,44 +288,6 @@ function populateZeroPages() {
   });
 }
 
-function populatePositionDateSelectors() {
-  const dates = [...new Set(pageDaily.map(r => r.date))]
-    .filter(Boolean)
-    .sort();
-
-  const selectors = [
-    document.getElementById('positionDate1'),
-    document.getElementById('positionDate2'),
-    document.getElementById('positionDate3'),
-    document.getElementById('positionDate4')
-  ];
-
-  selectors.forEach((select, index) => {
-    const existingFirstOption = index === 0 ? '' : '<option value="">None</option>';
-    select.innerHTML = existingFirstOption;
-
-    dates.forEach(date => {
-      const opt = document.createElement('option');
-      opt.value = date;
-      opt.textContent = date;
-      select.appendChild(opt);
-    });
-  });
-
-  if (dates.length) {
-    const latestIndex = dates.length - 1;
-    document.getElementById('positionDate1').value = dates[latestIndex];
-
-    if (dates.length > 7) {
-      document.getElementById('positionDate2').value = dates[Math.max(0, latestIndex - 7)];
-    }
-
-    if (dates.length > 30) {
-      document.getElementById('positionDate3').value = dates[Math.max(0, latestIndex - 30)];
-    }
-  }
-}
-
 function setDefaultDates() {
   if (!daily.length) return;
 
@@ -427,27 +297,14 @@ function setDefaultDates() {
   document.getElementById('endDate').value = dates[dates.length - 1];
 }
 
-function setRange(days, clickedButton = null) {
+function setRange(days) {
   currentRange = days;
 
   document.querySelectorAll('.filters button')
     .forEach(b => b.classList.remove('active'));
 
-  if (clickedButton) {
-    clickedButton.classList.add('active');
-  } else {
-    const buttons = document.querySelectorAll('.filters button');
-    buttons.forEach(button => {
-      const text = button.innerText.trim();
-      if (
-        (days === 1 && text === 'Day') ||
-        (days === 7 && text === '7 Days') ||
-        (days === 30 && text === '30 Days') ||
-        (days === 'all' && text === 'All Time')
-      ) {
-        button.classList.add('active');
-      }
-    });
+  if (event && event.target) {
+    event.target.classList.add('active');
   }
 
   renderDashboard();
@@ -455,10 +312,6 @@ function setRange(days, clickedButton = null) {
 
 function applyCustomRange() {
   currentRange = 'custom';
-
-  document.querySelectorAll('.filters button')
-    .forEach(b => b.classList.remove('active'));
-
   renderDashboard();
 }
 
@@ -610,122 +463,6 @@ function renderChart(rows) {
       }
     }
   });
-}
-
-function getPositionGroup(position) {
-  const pos = Number(position);
-
-  if (pos <= 10) return '1-10';
-  if (pos <= 20) return '10.1-20';
-  if (pos <= 30) return '20.1-30';
-  return '30+';
-}
-
-function getSelectedPositionDates() {
-  return [
-    document.getElementById('positionDate1').value,
-    document.getElementById('positionDate2').value,
-    document.getElementById('positionDate3').value,
-    document.getElementById('positionDate4').value
-  ].filter(Boolean);
-}
-
-function getPositionCountsForDate(date) {
-  const pageMap = {};
-
-  pageDaily
-    .filter(r => r.date === date && r.page && Number.isFinite(Number(r.position)))
-    .forEach(r => {
-      const key = r.page;
-      const impressions = Number(r.impressions) || 0;
-      const position = Number(r.position);
-
-      if (!pageMap[key]) {
-        pageMap[key] = {
-          page:r.page,
-          rows:0,
-          clicks:0,
-          impressions:0,
-          positionWeight:0,
-          fallbackPositionTotal:0
-        };
-      }
-
-      pageMap[key].rows += 1;
-      pageMap[key].clicks += Number(r.clicks) || 0;
-      pageMap[key].impressions += impressions;
-      pageMap[key].positionWeight += position * impressions;
-      pageMap[key].fallbackPositionTotal += position;
-    });
-
-  const counts = {
-    date,
-    total:0,
-    sourceRows:pageDaily.filter(r => r.date === date).length,
-    groups:{
-      '1-10':0,
-      '10.1-20':0,
-      '20.1-30':0,
-      '30+':0
-    }
-  };
-
-  Object.values(pageMap).forEach(page => {
-    const avgPosition = page.impressions
-      ? page.positionWeight / page.impressions
-      : page.fallbackPositionTotal / page.rows;
-
-    const group = getPositionGroup(avgPosition);
-
-    counts.groups[group] += 1;
-    counts.total += 1;
-  });
-
-  return counts;
-}
-
-function renderPositionTracker() {
-  const selectedDates = getSelectedPositionDates();
-
-  if (!selectedDates.length) return;
-
-  const dateCounts = selectedDates.map(getPositionCountsForDate);
-
-  renderPositionTable(dateCounts);
-}
-
-function renderPositionTable(dateCounts) {
-  const head = document.querySelector('#positionTable thead');
-  const body = document.querySelector('#positionTable tbody');
-
-  head.innerHTML = `
-    <tr>
-      <th>Position Group</th>
-      ${dateCounts.map(item => `<th>${item.date}</th>`).join('')}
-    </tr>
-  `;
-
-  body.innerHTML = '';
-
-  positionGroups.forEach(group => {
-    body.innerHTML += `
-      <tr>
-        <td>${group}</td>
-        ${dateCounts.map(item => `<td>${item.groups[group]}</td>`).join('')}
-      </tr>
-    `;
-  });
-
-  body.innerHTML += `
-    <tr>
-      <td><strong>Total Pages Counted</strong></td>
-      ${dateCounts.map(item => `<td><strong>${item.total}</strong></td>`).join('')}
-    </tr>
-    <tr>
-      <td><strong>Rows Found In page_daily.json</strong></td>
-      ${dateCounts.map(item => `<td><strong>${item.sourceRows}</strong></td>`).join('')}
-    </tr>
-  `;
 }
 
 function sortTable(type,column) {
