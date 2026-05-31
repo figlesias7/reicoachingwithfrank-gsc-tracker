@@ -119,30 +119,6 @@
       width:100%;
     }
 
-    .position-summary {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:12px;
-      margin-bottom:20px;
-    }
-
-    .position-pill {
-      background:#111827;
-      border:1px solid #374151;
-      border-radius:10px;
-      padding:14px;
-    }
-
-    .position-pill .label {
-      color:#9ca3af;
-      font-size:13px;
-      margin-bottom:8px;
-    }
-
-    .position-pill .count {
-      font-size:28px;
-      font-weight:bold;
-    }
 
     table {
       width:100%;
@@ -256,55 +232,6 @@
 </div>
 
 <div class="section">
-  <div class="section-header">
-    <div>
-      <h2>Position Movement Tracker</h2>
-      <div class="note">
-        Counts pages with GSC data on each selected date and groups them by average position:
-        1-10, 10.1-20, 20.1-30, and 30+.
-      </div>
-    </div>
-  </div>
-
-  <div class="tracker-controls">
-    <div class="tracker-control">
-      <label for="positionDate1">Main Date</label>
-      <select id="positionDate1" onchange="renderPositionTracker()"></select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate2">Compare Date 1</label>
-      <select id="positionDate2" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate3">Compare Date 2</label>
-      <select id="positionDate3" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-
-    <div class="tracker-control">
-      <label for="positionDate4">Compare Date 3</label>
-      <select id="positionDate4" onchange="renderPositionTracker()">
-        <option value="">None</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="position-summary" id="positionSummary"></div>
-
-  <canvas id="positionChart"></canvas>
-
-  <table id="positionTable">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-</div>
-
-<div class="section">
   <h2>Top Pages</h2>
 
   <table id="pagesTable">
@@ -350,6 +277,50 @@
     <tbody></tbody>
   </table>
 </div>
+<div class="section">
+  <div class="section-header">
+    <div>
+      <h2>Position Movement Tracker</h2>
+      <div class="note">
+        Use this when you want a position snapshot or a comparison against earlier dates. It counts every page row available in page_daily.json for each selected date and groups pages by average position: 1-10, 10.1-20, 20.1-30, and 30+.
+      </div>
+    </div>
+  </div>
+
+  <div class="tracker-controls">
+    <div class="tracker-control">
+      <label for="positionDate1">Main Date</label>
+      <select id="positionDate1" onchange="renderPositionTracker()"></select>
+    </div>
+
+    <div class="tracker-control">
+      <label for="positionDate2">Compare Date 1</label>
+      <select id="positionDate2" onchange="renderPositionTracker()">
+        <option value="">None</option>
+      </select>
+    </div>
+
+    <div class="tracker-control">
+      <label for="positionDate3">Compare Date 2</label>
+      <select id="positionDate3" onchange="renderPositionTracker()">
+        <option value="">None</option>
+      </select>
+    </div>
+
+    <div class="tracker-control">
+      <label for="positionDate4">Compare Date 3</label>
+      <select id="positionDate4" onchange="renderPositionTracker()">
+        <option value="">None</option>
+      </select>
+    </div>
+  </div>
+
+  <table id="positionTable">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
 
 <script>
 let daily = [];
@@ -359,7 +330,6 @@ let queries = [];
 let zeroPages = [];
 
 let chart = null;
-let positionChart = null;
 let currentRange = 30;
 
 const positionGroups = ['1-10', '10.1-20', '20.1-30', '30+'];
@@ -664,27 +634,34 @@ function getPositionCountsForDate(date) {
   const pageMap = {};
 
   pageDaily
-    .filter(r => r.date === date && Number(r.impressions) > 0 && Number.isFinite(Number(r.position)))
+    .filter(r => r.date === date && r.page && Number.isFinite(Number(r.position)))
     .forEach(r => {
       const key = r.page;
+      const impressions = Number(r.impressions) || 0;
+      const position = Number(r.position);
 
       if (!pageMap[key]) {
         pageMap[key] = {
           page:r.page,
+          rows:0,
           clicks:0,
           impressions:0,
-          positionWeight:0
+          positionWeight:0,
+          fallbackPositionTotal:0
         };
       }
 
+      pageMap[key].rows += 1;
       pageMap[key].clicks += Number(r.clicks) || 0;
-      pageMap[key].impressions += Number(r.impressions) || 0;
-      pageMap[key].positionWeight += (Number(r.position) || 0) * (Number(r.impressions) || 0);
+      pageMap[key].impressions += impressions;
+      pageMap[key].positionWeight += position * impressions;
+      pageMap[key].fallbackPositionTotal += position;
     });
 
   const counts = {
     date,
     total:0,
+    sourceRows:pageDaily.filter(r => r.date === date).length,
     groups:{
       '1-10':0,
       '10.1-20':0,
@@ -694,9 +671,10 @@ function getPositionCountsForDate(date) {
   };
 
   Object.values(pageMap).forEach(page => {
-    if (!page.impressions) return;
+    const avgPosition = page.impressions
+      ? page.positionWeight / page.impressions
+      : page.fallbackPositionTotal / page.rows;
 
-    const avgPosition = page.positionWeight / page.impressions;
     const group = getPositionGroup(avgPosition);
 
     counts.groups[group] += 1;
@@ -713,67 +691,7 @@ function renderPositionTracker() {
 
   const dateCounts = selectedDates.map(getPositionCountsForDate);
 
-  renderPositionSummary(dateCounts[0]);
-  renderPositionChart(dateCounts);
   renderPositionTable(dateCounts);
-}
-
-function renderPositionSummary(mainDateCounts) {
-  const summary = document.getElementById('positionSummary');
-  summary.innerHTML = '';
-
-  positionGroups.forEach(group => {
-    summary.innerHTML += `
-      <div class="position-pill">
-        <div class="label">${group}</div>
-        <div class="count">${mainDateCounts.groups[group]}</div>
-        <div class="muted">${mainDateCounts.date}</div>
-      </div>
-    `;
-  });
-}
-
-function renderPositionChart(dateCounts) {
-  const ctx = document.getElementById('positionChart');
-
-  if (positionChart) positionChart.destroy();
-
-  positionChart = new Chart(ctx, {
-    type:'bar',
-
-    data:{
-      labels:positionGroups,
-
-      datasets:dateCounts.map(item => ({
-        label:item.date,
-        data:positionGroups.map(group => item.groups[group])
-      }))
-    },
-
-    options:{
-      responsive:true,
-
-      plugins:{
-        tooltip:{
-          callbacks:{
-            afterBody:function(context) {
-              const item = dateCounts[context[0].datasetIndex];
-              return `Total pages with data: ${item.total}`;
-            }
-          }
-        }
-      },
-
-      scales:{
-        y:{
-          beginAtZero:true,
-          ticks:{
-            precision:0
-          }
-        }
-      }
-    }
-  });
 }
 
 function renderPositionTable(dateCounts) {
@@ -800,8 +718,12 @@ function renderPositionTable(dateCounts) {
 
   body.innerHTML += `
     <tr>
-      <td><strong>Total Pages With Data</strong></td>
+      <td><strong>Total Pages Counted</strong></td>
       ${dateCounts.map(item => `<td><strong>${item.total}</strong></td>`).join('')}
+    </tr>
+    <tr>
+      <td><strong>Rows Found In page_daily.json</strong></td>
+      ${dateCounts.map(item => `<td><strong>${item.sourceRows}</strong></td>`).join('')}
     </tr>
   `;
 }
