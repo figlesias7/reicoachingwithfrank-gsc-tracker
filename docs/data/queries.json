@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 72,
-    "ctr": 0.05555555555555555,
-    "position": 15.666666666666666
+    "impressions": 73,
+    "ctr": 0.0547945205479452,
+    "position": 15.602739726027398
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -26,6 +26,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 87
+  },
+  {
+    "query": "best real estate investing courses for beginners",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 89.5
   },
   {
     "query": "cost vs benefit of real estate mentorship programs",
@@ -58,9 +65,9 @@
   {
     "query": "frank iglesias",
     "clicks": 0,
-    "impressions": 39,
+    "impressions": 40,
     "ctr": 0,
-    "position": 9.35897435897436
+    "position": 9.4
   },
   {
     "query": "how much does real estate mentorship cost",
@@ -121,9 +128,9 @@
   {
     "query": "nurturing investor mindset for wholesaling",
     "clicks": 0,
-    "impressions": 2,
+    "impressions": 3,
     "ctr": 0,
-    "position": 34.5
+    "position": 34.666666666666664
   },
   {
     "query": "planning for financial independence through wholesaling",
@@ -142,16 +149,23 @@
   {
     "query": "real estate investing courses for beginners",
     "clicks": 0,
-    "impressions": 6,
+    "impressions": 7,
     "ctr": 0,
-    "position": 86.16666666666667
+    "position": 85.71428571428571
+  },
+  {
+    "query": "real estate investing for beginners course",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 91
   },
   {
     "query": "real estate investor mentor cost",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 12,
     "ctr": 0,
-    "position": 19.11111111111111
+    "position": 19.25
   },
   {
     "query": "real estate mentor near me",
@@ -205,9 +219,9 @@
   {
     "query": "rei sales academy",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 59
+    "position": 56.5
   },
   {
     "query": "rei university",
@@ -254,16 +268,16 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 111,
+    "impressions": 114,
     "ctr": 0,
-    "position": 17.423423423423422
+    "position": 17.289473684210527
   },
   {
     "query": "wholesale real estate mentorship",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 10,
     "ctr": 0,
-    "position": 22.333333333333332
+    "position": 21.4
   },
   {
     "query": "wholesaling mentor",
@@ -289,8 +303,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 43,
+    "impressions": 44,
     "ctr": 0,
-    "position": 9.930232558139535
+    "position": 9.909090909090908
   }
 ]
