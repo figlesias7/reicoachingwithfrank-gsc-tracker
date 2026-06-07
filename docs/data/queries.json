@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 78,
-    "ctr": 0.05128205128205128,
-    "position": 15.282051282051283
+    "impressions": 79,
+    "ctr": 0.05063291139240506,
+    "position": 15.227848101265822
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -49,6 +49,13 @@
     "position": 89.5
   },
   {
+    "query": "best real estate strategies for beginners",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 78
+  },
+  {
     "query": "cost vs benefit of real estate mentorship programs",
     "clicks": 0,
     "impressions": 2,
@@ -72,7 +79,7 @@
   {
     "query": "favorable financing",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 3,
     "ctr": 0,
     "position": 67
   },
@@ -100,9 +107,9 @@
   {
     "query": "frank iglesias",
     "clicks": 0,
-    "impressions": 43,
+    "impressions": 45,
     "ctr": 0,
-    "position": 9.465116279069768
+    "position": 9.71111111111111
   },
   {
     "query": "how much does real estate mentorship cost",
@@ -156,16 +163,16 @@
   {
     "query": "learning from other wholesalers mistakes",
     "clicks": 0,
-    "impressions": 8,
+    "impressions": 9,
     "ctr": 0,
-    "position": 41.25
+    "position": 41.44444444444444
   },
   {
     "query": "mentor for wholesaling real estate",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 10,
     "ctr": 0,
-    "position": 29.555555555555557
+    "position": 28.7
   },
   {
     "query": "nurturing investor mindset for wholesaling",
@@ -191,16 +198,16 @@
   {
     "query": "real estate investing courses for beginners",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 13,
     "ctr": 0,
-    "position": 85.77777777777777
+    "position": 89.38461538461539
   },
   {
     "query": "real estate investing for beginners course",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 91
+    "position": 95
   },
   {
     "query": "real estate investor mentor cost",
@@ -231,6 +238,13 @@
     "position": 9
   },
   {
+    "query": "real estate strategies for beginners",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 89
+  },
+  {
     "query": "real estate wholesale coaching",
     "clicks": 0,
     "impressions": 8,
@@ -240,9 +254,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 72,
+    "impressions": 74,
     "ctr": 0,
-    "position": 17.51388888888889
+    "position": 17.37837837837838
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -303,9 +317,9 @@
   {
     "query": "wholesale mentor",
     "clicks": 0,
-    "impressions": 6,
+    "impressions": 8,
     "ctr": 0,
-    "position": 18.166666666666668
+    "position": 16.375
   },
   {
     "query": "wholesale real estate coaching",
@@ -352,8 +366,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 48,
+    "impressions": 49,
     "ctr": 0,
-    "position": 9.791666666666666
+    "position": 9.755102040816327
   }
 ]
