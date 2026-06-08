@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 79,
-    "ctr": 0.05063291139240506,
-    "position": 15.227848101265822
+    "impressions": 80,
+    "ctr": 0.05,
+    "position": 15.1625
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -142,9 +142,9 @@
   {
     "query": "importance of self-education in wholesaling",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 21
+    "position": 14.5
   },
   {
     "query": "inbound marketing real estate investing",
@@ -156,9 +156,9 @@
   {
     "query": "lead generation for real estate investors",
     "clicks": 0,
-    "impressions": 4,
+    "impressions": 5,
     "ctr": 0,
-    "position": 91.75
+    "position": 92.2
   },
   {
     "query": "learning from other wholesalers mistakes",
@@ -191,23 +191,23 @@
   {
     "query": "principles rei",
     "clicks": 0,
-    "impressions": 3,
+    "impressions": 4,
     "ctr": 0,
-    "position": 71.33333333333333
+    "position": 69.25
   },
   {
     "query": "real estate investing courses for beginners",
     "clicks": 0,
-    "impressions": 13,
+    "impressions": 15,
     "ctr": 0,
-    "position": 89.38461538461539
+    "position": 88.93333333333334
   },
   {
     "query": "real estate investing for beginners course",
     "clicks": 0,
-    "impressions": 2,
+    "impressions": 3,
     "ctr": 0,
-    "position": 95
+    "position": 94
   },
   {
     "query": "real estate investor mentor cost",
@@ -254,9 +254,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 74,
+    "impressions": 76,
     "ctr": 0,
-    "position": 17.37837837837838
+    "position": 17.210526315789473
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -301,6 +301,13 @@
     "position": 23.333333333333332
   },
   {
+    "query": "start with strategy",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 30
+  },
+  {
     "query": "steps to make your first wholesale deal",
     "clicks": 0,
     "impressions": 2,
@@ -317,9 +324,9 @@
   {
     "query": "wholesale mentor",
     "clicks": 0,
-    "impressions": 8,
+    "impressions": 12,
     "ctr": 0,
-    "position": 16.375
+    "position": 15
   },
   {
     "query": "wholesale real estate coaching",
@@ -331,9 +338,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 123,
+    "impressions": 129,
     "ctr": 0,
-    "position": 17.252032520325205
+    "position": 17.27906976744186
   },
   {
     "query": "wholesale real estate mentorship",
@@ -345,16 +352,16 @@
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 11,
+    "impressions": 13,
     "ctr": 0,
-    "position": 12.545454545454545
+    "position": 12.153846153846153
   },
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 8,
+    "impressions": 9,
     "ctr": 0,
-    "position": 26
+    "position": 24.444444444444443
   },
   {
     "query": "wholesaling real estate mentor",
@@ -366,8 +373,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 49,
+    "impressions": 51,
     "ctr": 0,
-    "position": 9.755102040816327
+    "position": 9.745098039215685
   }
 ]
