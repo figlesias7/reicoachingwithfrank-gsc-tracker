@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 85,
-    "ctr": 0.047058823529411764,
-    "position": 14.858823529411765
+    "impressions": 86,
+    "ctr": 0.046511627906976744,
+    "position": 14.80232558139535
   },
   {
     "query": "frank iglesias",
@@ -54,6 +54,13 @@
     "impressions": 2,
     "ctr": 0,
     "position": 61
+  },
+  {
+    "query": "best real estate investing coaching programs",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 88
   },
   {
     "query": "best real estate investing courses for beginners",
@@ -147,6 +154,13 @@
     "position": 64
   },
   {
+    "query": "how to understand real strategy",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 61
+  },
+  {
     "query": "importance of discipline in wholesaling",
     "clicks": 0,
     "impressions": 1,
@@ -219,9 +233,9 @@
   {
     "query": "principles rei",
     "clicks": 0,
-    "impressions": 4,
+    "impressions": 6,
     "ctr": 0,
-    "position": 69.25
+    "position": 68.83333333333333
   },
   {
     "query": "real estate investing courses for beginners",
@@ -282,9 +296,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 83,
+    "impressions": 86,
     "ctr": 0,
-    "position": 16.722891566265062
+    "position": 16.52325581395349
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -373,9 +387,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 143,
+    "impressions": 146,
     "ctr": 0,
-    "position": 16.944055944055943
+    "position": 16.965753424657535
   },
   {
     "query": "wholesale real estate mentorship",
@@ -408,8 +422,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 57,
+    "impressions": 58,
     "ctr": 0,
-    "position": 9.596491228070175
+    "position": 9.568965517241379
   }
 ]
