@@ -2,9 +2,9 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 86,
-    "ctr": 0.046511627906976744,
-    "position": 14.80232558139535
+    "impressions": 88,
+    "ctr": 0.045454545454545456,
+    "position": 14.704545454545455
   },
   {
     "query": "frank iglesias",
@@ -189,6 +189,13 @@
     "position": 57.916666666666664
   },
   {
+    "query": "investment property coach",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 70
+  },
+  {
     "query": "lead generation for real estate investors",
     "clicks": 0,
     "impressions": 6,
@@ -254,9 +261,9 @@
   {
     "query": "real estate investor mentor cost",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 19,
     "ctr": 0,
-    "position": 23.666666666666668
+    "position": 23.894736842105264
   },
   {
     "query": "real estate mentor near me",
@@ -296,9 +303,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 86,
+    "impressions": 87,
     "ctr": 0,
-    "position": 16.52325581395349
+    "position": 16.45977011494253
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -387,9 +394,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 146,
+    "impressions": 152,
     "ctr": 0,
-    "position": 16.965753424657535
+    "position": 16.960526315789473
   },
   {
     "query": "wholesale real estate mentorship",
@@ -422,8 +429,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 58,
+    "impressions": 59,
     "ctr": 0,
-    "position": 9.568965517241379
+    "position": 9.542372881355933
   }
 ]
