@@ -1,10 +1,10 @@
 [
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
-    "clicks": 5,
-    "impressions": 621,
-    "ctr": 0.008051529790660225,
-    "position": 16.098228663446054
+    "clicks": 6,
+    "impressions": 631,
+    "ctr": 0.009508716323296355,
+    "position": 16.042789223454832
   },
   {
     "page": "https://www.reicoachingwithfrank.com/",
@@ -16,9 +16,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/aboutus",
     "clicks": 0,
-    "impressions": 27,
+    "impressions": 29,
     "ctr": 0,
-    "position": 8
+    "position": 8.03448275862069
   },
   {
     "page": "https://www.reicoachingwithfrank.com/privacypolicy",
@@ -107,9 +107,16 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-flip-houses-without-gambling-your-future",
     "clicks": 0,
-    "impressions": 41,
+    "impressions": 45,
     "ctr": 0,
-    "position": 63.170731707317074
+    "position": 62.15555555555556
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-know-if-a-flip-deal-is-too-risky",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 9
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-underwrite-your-lender",
@@ -135,9 +142,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/mistakes-new-wholesalers-make",
     "clicks": 0,
-    "impressions": 12,
+    "impressions": 13,
     "ctr": 0,
-    "position": 35.666666666666664
+    "position": 34.15384615384615
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/real-estate-deal-analysis-help",
@@ -208,6 +215,13 @@
     "impressions": 2,
     "ctr": 0,
     "position": 48
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/what-if-the-seller-says-yes",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 11
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/what-new-flippers-miss-during-due-diligence",
