@@ -2,16 +2,16 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 94,
-    "ctr": 0.0425531914893617,
-    "position": 14.372340425531915
+    "impressions": 95,
+    "ctr": 0.042105263157894736,
+    "position": 14.284210526315789
   },
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 50,
-    "ctr": 0.02,
-    "position": 9.76
+    "impressions": 51,
+    "ctr": 0.0196078431372549,
+    "position": 9.72549019607843
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -189,6 +189,13 @@
     "position": 62
   },
   {
+    "query": "how do you flip a house with no money",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 65
+  },
+  {
     "query": "how do you flip houses with no money",
     "clicks": 0,
     "impressions": 1,
@@ -296,9 +303,9 @@
   {
     "query": "learning from other wholesalers mistakes",
     "clicks": 0,
-    "impressions": 10,
+    "impressions": 11,
     "ctr": 0,
-    "position": 38.9
+    "position": 37.45454545454545
   },
   {
     "query": "mentor for wholesaling real estate",
@@ -331,9 +338,9 @@
   {
     "query": "principles rei",
     "clicks": 0,
-    "impressions": 7,
+    "impressions": 8,
     "ctr": 0,
-    "position": 68.57142857142857
+    "position": 67.25
   },
   {
     "query": "real estate agent mentor cost",
@@ -408,9 +415,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 99,
+    "impressions": 101,
     "ctr": 0,
-    "position": 15.737373737373737
+    "position": 15.564356435643564
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -499,9 +506,9 @@
   {
     "query": "wholesale mentor",
     "clicks": 0,
-    "impressions": 13,
+    "impressions": 14,
     "ctr": 0,
-    "position": 14.846153846153847
+    "position": 14.571428571428571
   },
   {
     "query": "wholesale real estate coaching",
@@ -513,9 +520,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 184,
+    "impressions": 186,
     "ctr": 0,
-    "position": 16.586956521739133
+    "position": 16.526881720430108
   },
   {
     "query": "wholesale real estate mentorship",
@@ -527,29 +534,29 @@
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 14,
+    "impressions": 16,
     "ctr": 0,
-    "position": 12
+    "position": 11.6875
   },
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 10,
     "ctr": 0,
-    "position": 24.444444444444443
+    "position": 23
   },
   {
     "query": "wholesaling real estate mentor",
     "clicks": 0,
-    "impressions": 5,
+    "impressions": 6,
     "ctr": 0,
-    "position": 14.8
+    "position": 13.666666666666666
   },
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 60,
+    "impressions": 62,
     "ctr": 0,
-    "position": 9.45
+    "position": 9.241935483870968
   }
 ]
