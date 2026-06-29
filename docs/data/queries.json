@@ -2,16 +2,16 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 95,
-    "ctr": 0.042105263157894736,
-    "position": 14.284210526315789
+    "impressions": 99,
+    "ctr": 0.04040404040404041,
+    "position": 13.95959595959596
   },
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 51,
-    "ctr": 0.0196078431372549,
-    "position": 9.72549019607843
+    "impressions": 52,
+    "ctr": 0.019230769230769232,
+    "position": 9.73076923076923
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -163,9 +163,9 @@
   {
     "query": "flip houses with no money",
     "clicks": 0,
-    "impressions": 2,
+    "impressions": 3,
     "ctr": 0,
-    "position": 54
+    "position": 51.333333333333336
   },
   {
     "query": "flipping a house with no money",
@@ -231,11 +231,25 @@
     "position": 71
   },
   {
+    "query": "how to flip a house without buying it",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 37
+  },
+  {
+    "query": "how to flip a house without money",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 58
+  },
+  {
     "query": "how to flip houses with no money",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 20,
     "ctr": 0,
-    "position": 60.333333333333336
+    "position": 60.85
   },
   {
     "query": "how to flip houses with no money down",
@@ -415,9 +429,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 101,
+    "impressions": 102,
     "ctr": 0,
-    "position": 15.564356435643564
+    "position": 15.519607843137255
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -520,9 +534,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 186,
+    "impressions": 188,
     "ctr": 0,
-    "position": 16.526881720430108
+    "position": 16.47872340425532
   },
   {
     "query": "wholesale real estate mentorship",
@@ -555,8 +569,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 62,
+    "impressions": 64,
     "ctr": 0,
-    "position": 9.241935483870968
+    "position": 9.078125
   }
 ]

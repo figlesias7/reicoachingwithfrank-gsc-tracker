@@ -2,9 +2,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
     "clicks": 6,
-    "impressions": 646,
-    "ctr": 0.009287925696594427,
-    "position": 15.88390092879257
+    "impressions": 656,
+    "ctr": 0.009146341463414634,
+    "position": 15.753048780487806
   },
   {
     "page": "https://www.reicoachingwithfrank.com/",
@@ -16,9 +16,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/aboutus",
     "clicks": 0,
-    "impressions": 30,
+    "impressions": 32,
     "ctr": 0,
-    "position": 8.033333333333333
+    "position": 8.15625
   },
   {
     "page": "https://www.reicoachingwithfrank.com/privacypolicy",
@@ -63,6 +63,13 @@
     "position": 11
   },
   {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/fix-and-flip",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 93
+  },
+  {
     "page": "https://www.reicoachingwithfrank.com/s/pages/fix-and-flip-mentor",
     "clicks": 0,
     "impressions": 40,
@@ -100,16 +107,16 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-avoid-overpaying-for-a-flip",
     "clicks": 0,
-    "impressions": 2,
+    "impressions": 3,
     "ctr": 0,
-    "position": 3.5
+    "position": 25.333333333333332
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-flip-houses-without-gambling-your-future",
     "clicks": 0,
-    "impressions": 47,
+    "impressions": 54,
     "ctr": 0,
-    "position": 62
+    "position": 61
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/how-to-know-if-a-flip-deal-is-too-risky",
@@ -191,9 +198,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/resources",
     "clicks": 0,
-    "impressions": 29,
+    "impressions": 30,
     "ctr": 0,
-    "position": 42.172413793103445
+    "position": 41.06666666666667
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/store",
