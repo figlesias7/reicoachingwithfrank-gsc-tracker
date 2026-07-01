@@ -2,16 +2,16 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 100,
-    "ctr": 0.04,
-    "position": 13.86
+    "impressions": 101,
+    "ctr": 0.039603960396039604,
+    "position": 13.772277227722773
   },
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 52,
-    "ctr": 0.019230769230769232,
-    "position": 9.73076923076923
+    "impressions": 53,
+    "ctr": 0.018867924528301886,
+    "position": 9.735849056603774
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -261,9 +261,9 @@
   {
     "query": "how to flip houses with no money",
     "clicks": 0,
-    "impressions": 23,
+    "impressions": 25,
     "ctr": 0,
-    "position": 60.391304347826086
+    "position": 60.8
   },
   {
     "query": "how to flip houses with no money down",
@@ -443,9 +443,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 104,
+    "impressions": 105,
     "ctr": 0,
-    "position": 15.432692307692308
+    "position": 15.39047619047619
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -569,22 +569,22 @@
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 10,
+    "impressions": 11,
     "ctr": 0,
-    "position": 23
+    "position": 21.90909090909091
   },
   {
     "query": "wholesaling real estate mentor",
     "clicks": 0,
-    "impressions": 6,
+    "impressions": 7,
     "ctr": 0,
-    "position": 13.666666666666666
+    "position": 13
   },
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 66,
+    "impressions": 67,
     "ctr": 0,
-    "position": 8.924242424242424
+    "position": 8.850746268656717
   }
 ]
