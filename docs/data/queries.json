@@ -9,9 +9,9 @@
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 62,
-    "ctr": 0.016129032258064516,
-    "position": 9.806451612903226
+    "impressions": 63,
+    "ctr": 0.015873015873015872,
+    "position": 9.746031746031745
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -65,9 +65,9 @@
   {
     "query": "best real estate investing coaching programs",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 88
+    "position": 87
   },
   {
     "query": "best real estate investing courses for beginners",
@@ -373,9 +373,9 @@
   {
     "query": "principles rei",
     "clicks": 0,
-    "impressions": 10,
+    "impressions": 11,
     "ctr": 0,
-    "position": 64.5
+    "position": 62.90909090909091
   },
   {
     "query": "real estate agent mentor cost",
@@ -532,6 +532,13 @@
     "position": 48.5
   },
   {
+    "query": "the hands off investor",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 70
+  },
+  {
     "query": "what to get out of real estate coaching",
     "clicks": 0,
     "impressions": 1,
@@ -562,9 +569,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 216,
+    "impressions": 218,
     "ctr": 0,
-    "position": 15.86111111111111
+    "position": 15.830275229357799
   },
   {
     "query": "wholesale real estate mentorship",
@@ -597,8 +604,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 81,
+    "impressions": 82,
     "ctr": 0,
-    "position": 8
+    "position": 7.963414634146342
   }
 ]
