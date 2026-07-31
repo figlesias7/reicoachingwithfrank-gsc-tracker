@@ -2,16 +2,16 @@
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 140,
-    "ctr": 0.02857142857142857,
-    "position": 11.321428571428571
+    "impressions": 143,
+    "ctr": 0.027972027972027972,
+    "position": 11.202797202797203
   },
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 75,
-    "ctr": 0.013333333333333334,
-    "position": 9.826666666666666
+    "impressions": 76,
+    "ctr": 0.013157894736842105,
+    "position": 9.802631578947368
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -100,9 +100,9 @@
   {
     "query": "coaching for real estate investors",
     "clicks": 0,
-    "impressions": 4,
+    "impressions": 5,
     "ctr": 0,
-    "position": 82
+    "position": 80.4
   },
   {
     "query": "cost vs benefit of real estate mentorship programs",
@@ -457,9 +457,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 138,
+    "impressions": 142,
     "ctr": 0,
-    "position": 14.333333333333334
+    "position": 14.23943661971831
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -492,9 +492,9 @@
   {
     "query": "rei game changers",
     "clicks": 0,
-    "impressions": 11,
+    "impressions": 14,
     "ctr": 0,
-    "position": 71.45454545454545
+    "position": 71.85714285714286
   },
   {
     "query": "rei institute",
@@ -525,6 +525,13 @@
     "position": 64
   },
   {
+    "query": "rei workshops",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 33
+  },
+  {
     "query": "reic real estate coaching",
     "clicks": 0,
     "impressions": 1,
@@ -534,9 +541,9 @@
   {
     "query": "role of a mentor in guiding your wholesaling journey",
     "clicks": 0,
-    "impressions": 4,
+    "impressions": 5,
     "ctr": 0,
-    "position": 29
+    "position": 25.4
   },
   {
     "query": "role of patience in successful wholesaling",
@@ -583,9 +590,9 @@
   {
     "query": "wholesale mentor",
     "clicks": 0,
-    "impressions": 17,
+    "impressions": 18,
     "ctr": 0,
-    "position": 14.411764705882353
+    "position": 14.277777777777779
   },
   {
     "query": "wholesale real estate coaching",
@@ -597,23 +604,23 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 268,
+    "impressions": 270,
     "ctr": 0,
-    "position": 15.134328358208956
+    "position": 15.114814814814816
   },
   {
     "query": "wholesale real estate mentorship",
     "clicks": 0,
-    "impressions": 15,
+    "impressions": 16,
     "ctr": 0,
-    "position": 17.866666666666667
+    "position": 17.375
   },
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 19,
     "ctr": 0,
-    "position": 11.555555555555555
+    "position": 11.421052631578947
   },
   {
     "query": "wholesaling mentorship",
@@ -632,8 +639,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 96,
+    "impressions": 100,
     "ctr": 0,
-    "position": 7.479166666666667
+    "position": 7.36
   }
 ]
