@@ -2,23 +2,23 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
     "clicks": 6,
-    "impressions": 948,
-    "ctr": 0.006329113924050633,
-    "position": 13.967299578059071
+    "impressions": 960,
+    "ctr": 0.00625,
+    "position": 13.903125
   },
   {
     "page": "https://www.reicoachingwithfrank.com/",
     "clicks": 2,
-    "impressions": 154,
-    "ctr": 0.012987012987012988,
-    "position": 7.746753246753247
+    "impressions": 155,
+    "ctr": 0.012903225806451613,
+    "position": 7.703225806451613
   },
   {
     "page": "https://www.reicoachingwithfrank.com/aboutus",
     "clicks": 0,
-    "impressions": 61,
+    "impressions": 64,
     "ctr": 0,
-    "position": 7.967213114754099
+    "position": 7.96875
   },
   {
     "page": "https://www.reicoachingwithfrank.com/privacypolicy",
@@ -51,7 +51,7 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/about",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
     "position": 1
   },
@@ -149,7 +149,7 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/investing-strategies",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
     "position": 1
   },
@@ -170,9 +170,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/real-estate-deal-analysis-help",
     "clicks": 0,
-    "impressions": 11,
+    "impressions": 12,
     "ctr": 0,
-    "position": 27
+    "position": 24.833333333333332
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/real-estate-investing-for-beginners",
@@ -212,23 +212,23 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/real-estate-mentorship-program-online",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
     "position": 1
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/resources",
     "clicks": 0,
-    "impressions": 74,
+    "impressions": 76,
     "ctr": 0,
-    "position": 53.351351351351354
+    "position": 53.026315789473685
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/store",
     "clicks": 0,
-    "impressions": 70,
+    "impressions": 75,
     "ctr": 0,
-    "position": 42.05714285714286
+    "position": 41.093333333333334
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/ways-to-finance-deals",
@@ -338,8 +338,8 @@
   {
     "page": "https://www.reicoachingwithfrank.com/termsofuse",
     "clicks": 0,
-    "impressions": 23,
+    "impressions": 24,
     "ctr": 0,
-    "position": 3.652173913043478
+    "position": 3.7916666666666665
   }
 ]
