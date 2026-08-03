@@ -838,5 +838,12 @@
     "impressions": 20,
     "ctr": 0,
     "position": 16.75
+  },
+  {
+    "date": "2026-08-01",
+    "clicks": 0,
+    "impressions": 10,
+    "ctr": 0,
+    "position": 13.4
   }
 ]
