@@ -9,9 +9,9 @@
   {
     "query": "frank iglesias",
     "clicks": 1,
-    "impressions": 96,
-    "ctr": 0.010416666666666666,
-    "position": 9.583333333333334
+    "impressions": 98,
+    "ctr": 0.01020408163265306,
+    "position": 9.571428571428571
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -457,9 +457,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 167,
+    "impressions": 169,
     "ctr": 0,
-    "position": 13.67065868263473
+    "position": 13.63905325443787
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -516,6 +516,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 71
+  },
+  {
+    "query": "rei training",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 51
   },
   {
     "query": "rei university",
@@ -611,9 +618,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 307,
+    "impressions": 312,
     "ctr": 0,
-    "position": 14.732899022801304
+    "position": 14.676282051282051
   },
   {
     "query": "wholesale real estate mentorship",
@@ -625,9 +632,9 @@
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 19,
+    "impressions": 20,
     "ctr": 0,
-    "position": 11.421052631578947
+    "position": 11.35
   },
   {
     "query": "wholesaling mentorship",
@@ -639,9 +646,9 @@
   {
     "query": "wholesaling real estate mentor",
     "clicks": 0,
-    "impressions": 12,
+    "impressions": 13,
     "ctr": 0,
-    "position": 12
+    "position": 11.923076923076923
   },
   {
     "query": "working with real estate wholesaling mentors",
