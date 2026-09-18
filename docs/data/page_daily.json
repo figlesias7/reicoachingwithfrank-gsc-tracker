@@ -1632,6 +1632,14 @@
     "position": 3.5
   },
   {
+    "page": "https://www.reicoachingwithfrank.com/privacypolicy",
+    "date": "2026-09-15",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 7
+  },
+  {
     "page": "https://www.reicoachingwithfrank.com/products",
     "date": "2026-04-11",
     "clicks": 0,
@@ -6296,6 +6304,14 @@
     "position": 10.222222222222221
   },
   {
+    "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
+    "date": "2026-09-15",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 11.75
+  },
+  {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-without-a-mentor",
     "date": "2026-05-26",
     "clicks": 0,
@@ -6718,5 +6734,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 5
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/termsofuse",
+    "date": "2026-09-15",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 3
   }
 ]
