@@ -9,9 +9,9 @@
   {
     "query": "frank iglesias",
     "clicks": 3,
-    "impressions": 137,
-    "ctr": 0.021897810218978103,
-    "position": 9.13138686131387
+    "impressions": 143,
+    "ctr": 0.02097902097902098,
+    "position": 9.174825174825175
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -75,6 +75,13 @@
     "impressions": 2,
     "ctr": 0,
     "position": 89.5
+  },
+  {
+    "query": "best real estate investment coaching for busy professionals",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 71
   },
   {
     "query": "best real estate strategies for beginners",
