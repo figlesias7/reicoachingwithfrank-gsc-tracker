@@ -9,9 +9,9 @@
   {
     "query": "frank iglesias",
     "clicks": 3,
-    "impressions": 155,
-    "ctr": 0.01935483870967742,
-    "position": 9.058064516129033
+    "impressions": 158,
+    "ctr": 0.0189873417721519,
+    "position": 9.00632911392405
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -695,8 +695,8 @@
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 160,
+    "impressions": 163,
     "ctr": 0,
-    "position": 5.85
+    "position": 5.865030674846626
   }
 ]
