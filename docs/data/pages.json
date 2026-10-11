@@ -2,16 +2,16 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/wholesaling-real-estate-mentor",
     "clicks": 8,
-    "impressions": 1525,
-    "ctr": 0.005245901639344262,
-    "position": 12.049836065573771
+    "impressions": 1543,
+    "ctr": 0.005184705119896306,
+    "position": 12.016202203499676
   },
   {
     "page": "https://www.reicoachingwithfrank.com/",
     "clicks": 5,
-    "impressions": 259,
-    "ctr": 0.019305019305019305,
-    "position": 8.111969111969113
+    "impressions": 262,
+    "ctr": 0.019083969465648856,
+    "position": 8.095419847328245
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/fix-and-flip-mentor",
@@ -30,23 +30,30 @@
   {
     "page": "https://www.reicoachingwithfrank.com/aboutus",
     "clicks": 0,
-    "impressions": 145,
+    "impressions": 159,
     "ctr": 0,
-    "position": 8.096551724137932
+    "position": 7.955974842767295
+  },
+  {
+    "page": "https://www.reicoachingwithfrank.com/contactus",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 7
   },
   {
     "page": "https://www.reicoachingwithfrank.com/privacypolicy",
     "clicks": 0,
-    "impressions": 22,
+    "impressions": 23,
     "ctr": 0,
-    "position": 4.272727272727273
+    "position": 4.260869565217391
   },
   {
     "page": "https://www.reicoachingwithfrank.com/products",
     "clicks": 0,
-    "impressions": 20,
+    "impressions": 21,
     "ctr": 0,
-    "position": 5.85
+    "position": 5.857142857142857
   },
   {
     "page": "https://www.reicoachingwithfrank.com/products#nav_bar",
@@ -58,9 +65,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/refundpolicy",
     "clicks": 0,
-    "impressions": 22,
+    "impressions": 23,
     "ctr": 0,
-    "position": 7.136363636363637
+    "position": 7.173913043478261
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/about",
@@ -156,9 +163,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/investing-strategies",
     "clicks": 0,
-    "impressions": 6,
+    "impressions": 7,
     "ctr": 0,
-    "position": 1
+    "position": 2.142857142857143
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/mentorship-application",
@@ -233,9 +240,9 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/store",
     "clicks": 0,
-    "impressions": 149,
+    "impressions": 153,
     "ctr": 0,
-    "position": 38.758389261744966
+    "position": 38.26797385620915
   },
   {
     "page": "https://www.reicoachingwithfrank.com/s/pages/ways-to-finance-deals",
@@ -338,15 +345,15 @@
   {
     "page": "https://www.reicoachingwithfrank.com/s/store",
     "clicks": 0,
-    "impressions": 23,
+    "impressions": 24,
     "ctr": 0,
-    "position": 13.565217391304348
+    "position": 13.125
   },
   {
     "page": "https://www.reicoachingwithfrank.com/termsofuse",
     "clicks": 0,
-    "impressions": 33,
+    "impressions": 34,
     "ctr": 0,
-    "position": 4.151515151515151
+    "position": 4.1764705882352935
   }
 ]
