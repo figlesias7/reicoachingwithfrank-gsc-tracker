@@ -1433,5 +1433,12 @@
     "impressions": 10,
     "ctr": 0,
     "position": 8.5
+  },
+  {
+    "date": "2026-10-25",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 6.85
   }
 ]
