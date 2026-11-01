@@ -2,9 +2,9 @@
   {
     "query": "frank iglesias",
     "clicks": 4,
-    "impressions": 209,
-    "ctr": 0.019138755980861243,
-    "position": 8.679425837320574
+    "impressions": 210,
+    "ctr": 0.01904761904761905,
+    "position": 8.676190476190477
   },
   {
     "query": "real estate wholesaling mentor",
@@ -191,9 +191,9 @@
   {
     "query": "frank rei",
     "clicks": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 4
+    "position": 3
   },
   {
     "query": "free real estate coaching",
@@ -530,6 +530,13 @@
     "impressions": 7,
     "ctr": 0,
     "position": 35.42857142857143
+  },
+  {
+    "query": "rei frank",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 10
   },
   {
     "query": "rei game changers",
