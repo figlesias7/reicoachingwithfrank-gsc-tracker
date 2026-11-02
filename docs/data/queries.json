@@ -2,9 +2,9 @@
   {
     "query": "frank iglesias",
     "clicks": 4,
-    "impressions": 210,
-    "ctr": 0.01904761904761905,
-    "position": 8.676190476190477
+    "impressions": 211,
+    "ctr": 0.018957345971563982,
+    "position": 8.66824644549763
   },
   {
     "query": "real estate wholesaling mentor",
@@ -462,6 +462,13 @@
     "position": 11
   },
   {
+    "query": "real estate mentorship",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 62
+  },
+  {
     "query": "real estate mentorship program cost",
     "clicks": 0,
     "impressions": 2,
@@ -688,16 +695,16 @@
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 37,
+    "impressions": 38,
     "ctr": 0,
-    "position": 10.486486486486486
+    "position": 10.447368421052632
   },
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 37,
+    "impressions": 38,
     "ctr": 0,
-    "position": 13.756756756756756
+    "position": 13.605263157894736
   },
   {
     "query": "wholesaling real estate mentor",
