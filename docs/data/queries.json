@@ -2,9 +2,9 @@
   {
     "query": "frank iglesias",
     "clicks": 4,
-    "impressions": 215,
-    "ctr": 0.018604651162790697,
-    "position": 8.655813953488373
+    "impressions": 217,
+    "ctr": 0.018433179723502304,
+    "position": 8.640552995391705
   },
   {
     "query": "real estate wholesaling mentor",
@@ -630,6 +630,13 @@
     "position": 37
   },
   {
+    "query": "seriously",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 4
+  },
+  {
     "query": "start with strategy",
     "clicks": 0,
     "impressions": 1,
@@ -702,9 +709,9 @@
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 38,
+    "impressions": 39,
     "ctr": 0,
-    "position": 13.605263157894736
+    "position": 13.461538461538462
   },
   {
     "query": "wholesaling real estate mentor",
