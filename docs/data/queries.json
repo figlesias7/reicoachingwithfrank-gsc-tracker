@@ -2,16 +2,16 @@
   {
     "query": "frank iglesias",
     "clicks": 4,
-    "impressions": 227,
-    "ctr": 0.01762114537444934,
-    "position": 8.594713656387665
+    "impressions": 228,
+    "ctr": 0.017543859649122806,
+    "position": 8.592105263157894
   },
   {
     "query": "real estate wholesaling mentor",
     "clicks": 4,
-    "impressions": 271,
-    "ctr": 0.014760147601476014,
-    "position": 8.188191881918819
+    "impressions": 272,
+    "ctr": 0.014705882352941176,
+    "position": 8.183823529411764
   },
   {
     "query": "real estate wholesaling mentorship",
@@ -455,6 +455,13 @@
     "position": 35.628571428571426
   },
   {
+    "query": "real estate investors coaching and training",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 31
+  },
+  {
     "query": "real estate mentor near me",
     "clicks": 0,
     "impressions": 3,
@@ -541,9 +548,9 @@
   {
     "query": "rei frank",
     "clicks": 0,
-    "impressions": 6,
+    "impressions": 7,
     "ctr": 0,
-    "position": 6
+    "position": 6.285714285714286
   },
   {
     "query": "rei game changers",
@@ -618,9 +625,9 @@
   {
     "query": "role of a mentor in guiding your wholesaling journey",
     "clicks": 0,
-    "impressions": 19,
+    "impressions": 20,
     "ctr": 0,
-    "position": 12.947368421052632
+    "position": 12.35
   },
   {
     "query": "role of patience in successful wholesaling",
