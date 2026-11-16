@@ -2,9 +2,9 @@
   {
     "query": "frank iglesias",
     "clicks": 4,
-    "impressions": 228,
-    "ctr": 0.017543859649122806,
-    "position": 8.592105263157894
+    "impressions": 230,
+    "ctr": 0.017391304347826087,
+    "position": 8.552173913043479
   },
   {
     "query": "real estate wholesaling mentor",
@@ -506,9 +506,9 @@
   {
     "query": "real estate wholesale mentor",
     "clicks": 0,
-    "impressions": 235,
+    "impressions": 238,
     "ctr": 0,
-    "position": 11.697872340425532
+    "position": 11.609243697478991
   },
   {
     "query": "real estate wholesale mentor near me",
@@ -600,6 +600,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 33
+  },
+  {
+    "query": "rei90",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 44
   },
   {
     "query": "reibook",
@@ -695,9 +702,9 @@
   {
     "query": "wholesale real estate mentor",
     "clicks": 0,
-    "impressions": 427,
+    "impressions": 428,
     "ctr": 0,
-    "position": 13.770491803278688
+    "position": 13.754672897196262
   },
   {
     "query": "wholesale real estate mentorship",
@@ -709,29 +716,36 @@
   {
     "query": "wholesaling mentor",
     "clicks": 0,
-    "impressions": 40,
+    "impressions": 46,
     "ctr": 0,
-    "position": 10.35
+    "position": 10.391304347826088
   },
   {
     "query": "wholesaling mentorship",
     "clicks": 0,
-    "impressions": 42,
+    "impressions": 44,
     "ctr": 0,
-    "position": 13.238095238095237
+    "position": 13.454545454545455
   },
   {
     "query": "wholesaling real estate mentor",
     "clicks": 0,
-    "impressions": 36,
+    "impressions": 41,
     "ctr": 0,
-    "position": 10.083333333333334
+    "position": 9.414634146341463
   },
   {
     "query": "working with real estate wholesaling mentors",
     "clicks": 0,
-    "impressions": 170,
+    "impressions": 171,
     "ctr": 0,
-    "position": 5.8882352941176475
+    "position": 5.859649122807017
+  },
+  {
+    "query": "\u5bcc\u88d5\u5c64 \u55b6\u696d \u7814\u4fee \u30b3\u30c4",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 2
   }
 ]
